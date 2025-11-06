@@ -2,21 +2,12 @@
 import Image from "next/image";
 import { useContext, useEffect, useEffectEvent } from "react";
 import { useAppContext } from "./contexts.js/AppContext";
+import HomeContainer from "@/components/HomeContainer";
 
 export default function Home() {
-  const {getPaths, paths} = useAppContext();
-
-  useEffect(() => {
-    getPaths();
-  
-  }, [getPaths])
-  
-
   return (
-   <div className="text-white">
-  {paths.map((path) => (
-    <p key={path._id}>{path.name}</p>
-  ))}
-</div>
+ <div className="bg-amber-50">
+    <HomeContainer />
+  </div>
   );
 }
