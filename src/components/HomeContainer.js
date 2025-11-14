@@ -7,7 +7,6 @@ import WebDescription from '@/components/WebDescription'
 const HomeContainer = () => {
   return (
     <div>
-        <Navbar />
         <Hero />
         <WebDescription />
         <Paths />

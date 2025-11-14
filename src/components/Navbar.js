@@ -1,17 +1,15 @@
-import Link from 'next/link'
-import React from 'react'
-import Image from 'next/image'
+
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <nav className='flex justify-between items-center'> 
-        <Link href="/" className='flex items-center'>
-        <Image src="/vercel.svg" width={50} height={50} alt={"hola"}/>
-        </Link>
-
-        <ul className=' md:flex md:flex-row md:w-[30%]  md:justify-between md:mr-4 md:pr-2
-          absolute md:static top-[70px] left-0 w-full md:bg-transparent text-white text-md'>
-             <li className="px-4 py-2 md:p-0">
+    <nav className="flex justify-between items-center bg-transparent mx-10 mb-10 h-[100px] w-[95%] fixed top-0 left-0 z-50">
+      <Link href="/" className="flex items-center">
+        <Image src="/vercel.svg" width={50} height={50} alt={"logo"} />
+      </Link>
+      <ul className="md:flex md:flex-row w-[30%] justify-between mr-4 px-4 py-1 bg-black text-white rounded-lg">
+        <li className="px-4 py-2 md:p-0">
           <Link href={`/path`}>Selected Path</Link>
         </li>
         <li className="px-4 py-2 md:p-0">
@@ -20,9 +18,13 @@ const Navbar = () => {
         <li className="px-4 py-2 md:p-0">
           <Link href="/favorites">Favorites</Link>
         </li>
-        </ul>
-    </nav>
-  )
-}
+      </ul>
 
-export default Navbar
+      <div>
+        <p>name</p>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

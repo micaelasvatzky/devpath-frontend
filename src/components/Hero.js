@@ -1,35 +1,74 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 const Hero = () => {
   return (
-    <div className="h-[300px] flex items-baseline justify-center align-left ml-6 flex-col">
-      <h1 className="flex justify-start items-center font-black text-3xl">
+    <div
+      className="
+        relative
+        h-[400px] 
+        flex flex-col  items-center 
+        px-6
+        pt-30
+        bg-[#0a0a0a]
+        overflow-hidden
+        text-center
+      "
+      style={{
+        backgroundImage: `
+          radial-gradient(circle at 20% 30%, rgba(0, 120, 255, 0.7), transparent 40%),
+          radial-gradient(circle at 35% 50%, rgba(0, 180, 255, 0.5), transparent 40%),
+          radial-gradient(circle at 70% 70%, rgba(0, 120, 255, 0.6), transparent 50%),
+          radial-gradient(circle at 85% 25%, rgba(0, 150, 255, 0.4), transparent 50%)
+        `,
+      }}
+    >
+      <h1
+        className="
+          font-black
+          text-[3rem]
+          bg-gradient-to-r from-[#00aaff] via-[#a0c8ff] to-white
+          bg-clip-text text-transparent
+          -webkit-bg-clip-text -webkit-text-fill-color-transparent
+          leading-tight
+          mb-0
+        "
+      >
         There are a thousand ways to learn how to code.
       </h1>
-      <h1 className="flex justify-start items-center font-black text-3xl ">
+      <h1
+        className="
+          font-black
+          text-[3rem]
+          bg-gradient-to-r from-[#00aaff] via-[#a0c8ff] to-white
+          bg-clip-text text-transparent
+          -webkit-bg-clip-text -webkit-text-fill-color-transparent
+          leading-tight
+          mt-0
+        "
+      >
         Few show you the way.
       </h1>
-      <h4 className="text-2xl mt-4">Luckily, there’s DevPath.</h4>
+      <h4 className="text-2xl font-normal mt-4 mb-0">Luckily, there’s DevPath.</h4>
+
       <button
         className="
-  relative
-  px-8 py-3 mt-6
-  rounded-2xl 
-  uppercase 
-  font-semibold 
-  tracking-wide
-  text-white 
-  backdrop-blur-md
-  bg-linear-to-r from-[#c158ff]/40 to-[#EE6DC1]/60
-  border border-white/20
-  shadow-[0_0_40px_-10px_rgba(0,229,255,0.6)]
-  transition-all
-  hover:shadow-[0_0_60px_-5px_rgba(123,44,255,0.9)]
-  hover:scale-[1.05]
-  hover:border-white/40
-"
+          mt-6
+          px-6 py-2
+          rounded-lg
+          border border-white/30
+          bg-white/10
+          text-white
+          font-semibold
+          backdrop-blur-md
+          shadow-[0_0_20px_rgba(0,120,255,0.6)]
+          transition-all duration-300
+          hover:shadow-[0_0_40px_rgba(0,120,255,0.9)]
+          hover:scale-105
+          hover:border-white/60
+        "
       >
-       Start your Path
+        Start your Path
       </button>
     </div>
   );

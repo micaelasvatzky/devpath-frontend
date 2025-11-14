@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import { AppContextProvider } from "./contexts.js/AppContext";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.className} ${montserrat.className} antialiased bg-[#05152F]`}
       >
-        <AppContextProvider>{children}</AppContextProvider>
+        <AppContextProvider>
+          <Navbar />
+          {children}
+        </AppContextProvider>
       </body>
     </html>
   );

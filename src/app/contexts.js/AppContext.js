@@ -18,8 +18,7 @@ export const AppContextProvider = ({ children }) => {
   description: "",
   steps: []
 });
-  const [resources, setResources] = useState([]);
-  const [resourcesFromPath, setResourcesFromPath] = useState([]);
+  const [steps, setSteps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState([]);
   const [completed, useCompleted] = useState([]);
@@ -48,14 +47,14 @@ export const AppContextProvider = ({ children }) => {
     } catch (error) {
         console.log("error:", error);
     }
-  }, [])
+  }, []);
 
-  const getResources = useCallback(async () => {
+  const getSteps = useCallback(async () => {
     try {
         setLoading(true);
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/resources`);
-        setResources(res.data.resources);
-        console.log(res.data.resources);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/steps`);
+        setSteps(res.data.steps);
+        console.log(res.data.steps);
 
         setLoading(false);
     } catch (error) {
@@ -63,19 +62,9 @@ export const AppContextProvider = ({ children }) => {
     }
   }, []);
 
+  
 
-  const getResourcesFromPath = useCallback(async (id) => {
-    try {
-        setLoading(true);
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/paths/${id}/resources`)
-        setResourcesFromPath(res.data.resources);
-        console.log(res.data.resources);
-        
-        setLoading(false);
-    } catch (error) {
-        console.log("error:", error);
-    }
-  }, []);
+
 
 
 
@@ -84,10 +73,8 @@ export const AppContextProvider = ({ children }) => {
       value={{
         getPaths,
         paths,
-        getResources, 
-        resources,
-        getResourcesFromPath,
-        resourcesFromPath,
+        getSteps, 
+        steps,
         getSinglePath,
         singlePath
       }}
