@@ -9,12 +9,16 @@ export const Paths = () => {
         getPaths();
     }, [getPaths]);
 
+   
 
   return (
-    <div className="flex justify-between">
+    <div className="p-4 flex flex-col items-center text-4xl font-black  bg-gradient-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent ">
+      <h1 className="mb-10">Choose your path and start coding </h1>
+      <div className="flex justify-between w-full">
         {paths.map((path) => (
             <PathCard key={path._id} path = {path}/>
         ))}
+        </div>
     </div>
   )
 }

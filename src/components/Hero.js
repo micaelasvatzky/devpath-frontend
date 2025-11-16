@@ -27,7 +27,7 @@ const Hero = () => {
         className="
           font-black
           text-[3rem]
-          bg-gradient-to-r from-[#00aaff] via-[#a0c8ff] to-white
+          bg-linear-to-r from-[#00aaff] via-[#a0c8ff] to-white
           bg-clip-text text-transparent
           -webkit-bg-clip-text -webkit-text-fill-color-transparent
           leading-tight
