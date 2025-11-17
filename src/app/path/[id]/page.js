@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import PathContainer from "@/components/PathContainer";
 import React from "react";
 

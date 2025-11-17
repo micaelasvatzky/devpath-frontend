@@ -25,7 +25,7 @@ const ResourceFavoriteCard = ({ resource }) => {
               />
             </svg>
           ),
-          color: "bg-blue-500",
+          color: "bg-blue-500/50",
         };
       case "artículo":
         return {
@@ -46,7 +46,7 @@ const ResourceFavoriteCard = ({ resource }) => {
               />
             </svg>
           ),
-          color: "bg-pink-500",
+          color: "bg-pink-500/50",
         };
       case "curso":
         return {
@@ -67,7 +67,7 @@ const ResourceFavoriteCard = ({ resource }) => {
               />
             </svg>
           ),
-          color: "bg-green-500",
+          color: "bg-green-500/50",
         };
       case "guía":
         return {
@@ -88,7 +88,7 @@ const ResourceFavoriteCard = ({ resource }) => {
               />
             </svg>
           ),
-          color: "bg-yellow-500",
+          color: "bg-yellow-500/50",
         };
     }
   };

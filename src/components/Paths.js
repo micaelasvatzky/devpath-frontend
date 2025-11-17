@@ -10,9 +10,8 @@ export const Paths = () => {
   }, [getPaths]);
 
   return (
-    <div id="paths" className="p-4 flex flex-col items-center text-4xl font-black bg-gradient-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent">
+    <div id="paths" className="p-4 flex flex-col items-center text-4xl font-black bg-linear-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent">
       <h1 className="mb-10 text-center">Choose your path and start coding</h1>
-      {/* Usamos flex-wrap para que las tarjetas se ajusten a las filas */}
       <div className="flex flex-wrap justify-center gap-4 w-full sm:flex-row sm:gap-6 lg:gap-8">
         {paths.map((path) => (
           <PathCard key={path._id} path={path} />

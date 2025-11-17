@@ -4,7 +4,7 @@ import React from "react";
 const page = () => {
   return <div>
     <FavoritesContainer />
-  </div>;
+  </div>
 };
 
 export default page;

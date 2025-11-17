@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { useAppContext } from "@/app/contexts/AppContext"; // Importamos el contexto
+import { useAppContext } from "@/app/contexts/AppContext"; 
 import LoginPopUp from "@/components/LoginPopUp"; 
 import Hero from "@/components/Hero";
 import WebDescription from "@/components/WebDescription";

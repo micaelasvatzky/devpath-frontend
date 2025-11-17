@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from "react";
-import { useAppContext } from "@/app/contexts/AppContext"; // Importamos el contexto
-import ResourceFavoriteCard from "@/components/ResourceFavoriteCard"; // Asegúrate de que este componente exista
+import { useAppContext } from "@/app/contexts/AppContext";
+import ResourceFavoriteCard from "@/components/ResourceFavoriteCard"; 
 
 
 const FavoritesContainer = () => {
@@ -24,7 +24,7 @@ const FavoritesContainer = () => {
       }}
     >
        <h1
-        className="font-black text-center text-4xl sm:text-5xl md:text-6xl bg-gradient-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent leading-tight mb-5"
+        className="font-black text-center text-4xl sm:text-5xl md:text-6xl bg-linear-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent leading-tight mb-5"
       >
         Favorites
       </h1>
