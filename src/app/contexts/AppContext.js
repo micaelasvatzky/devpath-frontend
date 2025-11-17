@@ -117,29 +117,26 @@ export const AppContextProvider = ({ children }) => {
 
   const getFavoriteResources = useCallback(async (favoritesIds) => {
     try {
-      setLoading(true); // Inicia el estado de carga
-
-      // Hacemos la petición para cada id de favorito
+      setLoading(true); 
       const resourcesFavorites = await Promise.all(
         favoritesIds.map(async (id) => {
           try {
             const res = await axios.get(
               `${process.env.NEXT_PUBLIC_API_URL}/resources/${id}`
             );
-            return res.data.resource; // Retorna el recurso que obtenemos de la API
+            return res.data.resource;
           } catch (error) {
             console.error(`Error al obtener el recurso con id ${id}:`, error);
-            return null; // Si ocurre un error, retorna null
           }
         })
       );
 
-      // Filtramos los resultados para eliminar los `null` (recursos no válidos)
-      setFavoriteResources(resourcesFavorites.filter(resource => resource !== null));
-      setLoading(false); // Fin de la carga
+     
+      setFavoriteResources(resourcesFavorites);
+      setLoading(false); 
     } catch (error) {
       console.error("Error al obtener los recursos favoritos:", error);
-      setLoading(false); // Finaliza la carga en caso de error
+      setLoading(false); 
     }
   }, []);
 

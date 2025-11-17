@@ -14,20 +14,17 @@ const AboutMeContainer = () => {
         `,
       }}
     >
-      {/* Contenedor de la cuadrícula de Bento con 6 columnas y 4 filas */}
+      
       <div className="mx-auto grid grid-cols-1 md:grid-cols-6 gap-4">
-        {/* Foto de perfil (1 columna en móvil, 1 columna en desktop) */}
         <div className="col-span-1 md:col-span-2 flex justify-center">
           <Image
             className="rounded-2xl"
-            src="/assets/yo.jpeg" // Asegúrate de tener la foto en 'public/assets/yo.jpeg'
+            src="/assets/yo.jpeg" 
             alt="Foto de Micaela"
             height={250}
             width={250}
           />
         </div>
-
-        {/* Datos personales (1 columna en móvil, 5 en desktop) */}
         <div className="col-span-1 md:col-span-4 bg-[#0d0f16] p-6 rounded-2xl shadow-lg backdrop-blur-md text-white">
           <h4 className="text-xl md:text-2xl font-bold text-[#00aaff] mb-6">
             ¡Hola! Soy Micaela Svatzky :P
@@ -42,13 +39,11 @@ const AboutMeContainer = () => {
             <li>Siempre me visto de negro (o la mayoría de las veces)</li>
           </ul>
         </div>
-
-        {/* Música favorita (ocupa 6 columnas en desktop, 1 en móvil) */}
         <div className="col-span-1 md:col-span-2 bg-[#0d0f16] p-6 rounded-2xl shadow-lg backdrop-blur-md text-white">
           <h4 className="text-xl md:text-2xl font-bold text-[#00aaff] mb-4">
             Música que me gusta
           </h4>
-          <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg: grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="flex justify-center">
               <Image
                 className="rounded-2xl w-20 h-20 sm:w-[100px] sm:h-[100px]"
@@ -123,8 +118,6 @@ const AboutMeContainer = () => {
             </div>
           </div>
         </div>
-
-        {/* Series favoritas (1 columna en móvil, 2 en desktop) */}
         <div className="col-span-1 md:col-span-2 bg-[#0d0f16] p-6 rounded-2xl shadow-lg backdrop-blur-md text-white">
           <h4 className="text-xl md:text-2xl font-bold text-[#00aaff] mb-4">
             Series favoritas
@@ -146,8 +139,6 @@ const AboutMeContainer = () => {
             />
           </div>
         </div>
-
-        {/* Mi perrita Maddie (1 columna en móvil, 2 en desktop) */}
         <div className="col-span-1 md:col-span-2 bg-[#0d0f16] p-6 rounded-2xl shadow-lg backdrop-blur-md text-white">
           <h4 className="text-xl md:text-2xl font-bold text-[#00aaff] mb-4">
             Mi perrita Maddie

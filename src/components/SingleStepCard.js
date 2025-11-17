@@ -1,12 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { useAppContext } from "@/app/contexts/AppContext";
 import ResourceCard from "@/components/ResourceCard";
 
 const SingleStepCard = ({ step }) => {
   const [open, setOpen] = useState(false);
   const [completed, setCompleted] = useState(false);
-  const { handleChangeFavorite, isFavorite } = useAppContext();
 
   const toggleDropdown = () => setOpen(!open);
   const toggleCompletion = () => setCompleted(!completed);

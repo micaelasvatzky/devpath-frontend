@@ -1,9 +1,6 @@
 import React from "react";
 
-const HeroPath = ({ singlePath, loading }) => {
-  if (loading) {
-    return <Loading />;
-  }
+const HeroPath = ({ singlePath}) => {
 
   return (
     <div
@@ -13,11 +10,11 @@ const HeroPath = ({ singlePath, loading }) => {
           radial-gradient(circle at 20% 30%, rgba(0, 120, 255, 0.7), transparent 40%),
           radial-gradient(circle at 35% 50%, rgba(0, 180, 255, 0.5), transparent 40%),
           radial-gradient(circle at 70% 70%, rgba(0, 120, 255, 0.6), transparent 50%),
-          radial-gradient(circle at 85% 25%, rgba(0, 150, 255, 0.4), transparent 50%)`,
+          radial-gradient(circle at 85% 25%, rgba(0, 150, 255, 0.4), transparent 50%)`
       }}
     >
       <h1
-        className="font-black text-4xl sm:text-5xl md:text-6xl bg-gradient-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent leading-tight mb-5"
+        className="font-black text-4xl sm:text-5xl md:text-6xl bg-linear-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent leading-tight mb-5"
       >
         {singlePath.name}
       </h1>
