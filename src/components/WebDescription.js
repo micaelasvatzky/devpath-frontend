@@ -1,11 +1,32 @@
-import React from 'react'
+import React from "react";
 
 const WebDescription = () => {
   return (
-    <p className='text-black'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam asperiores illo iure nam voluptatibus, neque obcaecati, minus assumenda fugiat nihil deleniti earum qui veniam incidunt autem similique voluptate aut consectetur eveniet labore natus illum fuga, rerum dolores. Doloremque eos a eius necessitatibus vero voluptates perferendis expedita perspiciatis soluta at quasi, eligendi neque modi, eaque libero, quibusdam saepe alias recusandae officiis dolore voluptatum mollitia eum voluptatem dolorem. Eveniet, rerum nesciunt temporibus quod reiciendis ab commodi, molestiae aut consectetur quos repellendus ipsum accusamus iure reprehenderit cupiditate sunt dicta quis, ea nisi culpa porro? Minus velit voluptatum dolorum laboriosam pariatur maiores ad cum.
-    </p>
-  )
-}
+    <div
+      className="relative flex flex-col items-center justify-center p-6 font-black bg-gradient-to-r from-[#000814] via-[#001122] to-[#000000] text-white leading-tight min-h-[250px] overflow-hidden"
+    >
+      {/* Texto de fondo */}
+      <div
+        className="absolute inset-0 flex justify-center items-center 
+        text-[12rem] font-bold text-[#0055ff] opacity-10 select-none pointer-events-none"
+      >
+        DevPath
+      </div>
 
-export default WebDescription
+      {/* Contenido principal */}
+      <div className="flex flex-col items-center bg-gradient-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent">
+        <p className="text-center max-w-[1000px] pt-4 text-2xl">
+          Learning to code doesn’t have to be confusing. Choose your path
+        </p>
+        <p className="text-center text-3xl font-bold">Frontend, Backend, or Fullstack</p>
+        <p className="text-center max-w-[1000px] pb-4 text-2xl">
+          and let DevPath guide you with curated, free resources from beginner
+          to pro.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default WebDescription;
+
