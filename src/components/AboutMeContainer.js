@@ -16,7 +16,7 @@ const AboutMeContainer = () => {
     >
       
       <div className="mx-auto grid grid-cols-1 md:grid-cols-6 gap-4">
-        <div className="col-span-1 md:col-span-2 flex justify-center">
+        <div className="col-span-1 md:col-span-1 flex justify-center lg:justify-start">
           <Image
             className="rounded-2xl"
             src="/assets/yo.jpeg" 
@@ -25,7 +25,7 @@ const AboutMeContainer = () => {
             width={250}
           />
         </div>
-        <div className="col-span-1 md:col-span-4 bg-[#0d0f16] p-6 rounded-2xl shadow-lg backdrop-blur-md text-white">
+        <div className="col-span-1 md:col-span-5 bg-[#0d0f16] p-6 rounded-2xl shadow-lg backdrop-blur-md text-white">
           <h4 className="text-xl md:text-2xl font-bold text-[#00aaff] mb-6">
             ¡Hola! Soy Micaela Svatzky :P
           </h4>
