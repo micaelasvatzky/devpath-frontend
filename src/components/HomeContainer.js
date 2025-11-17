@@ -1,30 +1,21 @@
-'use client'
-import {useState} from 'react'
-import Hero from '@/components/Hero'
-import Paths from '@/components/Paths'
-import Navbar from '@/components/Navbar'
-import LoginPopUp from '@/components/LoginPopUp'
-import WebDescription from '@/components/WebDescription'
-import { useAppContext } from '@/app/contexts.js/AppContext'
+import React, { useState} from "react";
+import { useAppContext } from "@/app/contexts/AppContext"; // Importamos el contexto
+import LoginPopUp from "@/components/LoginPopUp"; 
+import Hero from "@/components/Hero";
+import WebDescription from "@/components/WebDescription";
+import Paths from "@/components/Paths";
 
 const HomeContainer = () => {
-  const [showLoginPopUp, setShowLoginPopUp] = useState(true); 
-
-    const closeLoginPopUp = () => {
-    setShowLoginPopUp(false);
-  };
-
+  const { user } = useAppContext(); 
 
   return (
     <div>
-      <Navbar/>
+      {!user && <LoginPopUp />}
       <Hero />
       <WebDescription />
       <Paths />
-
-      {showLoginPopUp && <LoginPopUp onClose={closeLoginPopUp} />}
     </div>
-  )
-}
+  );
+};
 
-export default HomeContainer
+export default HomeContainer;

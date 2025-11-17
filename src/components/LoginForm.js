@@ -20,7 +20,7 @@ function validateUsername(value) {
 }
 
 export const LoginForm = ({ handleAddUser, onClose }) => (
-  <div className="flex items-center justify-center z-50"> {/* Aseguramos que todo el contenedor tenga z-index alto */}
+  <div className="flex items-center justify-center z-50"> 
     <div
       className="
         relative overflow-hidden rounded-2xl p-6
@@ -29,11 +29,10 @@ export const LoginForm = ({ handleAddUser, onClose }) => (
         shadow-[0_0_40px_-10px_rgba(0,0,255,0.2)]
         backdrop-blur-md
         transition-all duration-300
-        hover:shadow-[0_0_60px_-10px_rgba(0,120,255,0.5)]
         hover:border-blue-500/30 w-full max-w-md
         z-50"  
     >
-      {/* Fondo con blur */}
+    
       <div className="absolute inset-0 bg-linear-to-b from-blue-500/5 to-transparent opacity-40 z-0" /> 
       <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl z-0" />
 
@@ -85,7 +84,8 @@ export const LoginForm = ({ handleAddUser, onClose }) => (
             <div className="relative z-10"> 
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent bg-blue-950 rounded-md shadow-sm text-sm font-medium text-white transition-transform transform hover:scale-105 hover:border-2 hover:border-blue-500 z-10"
+                className="w-full flex justify-center py-2 px-4 border border-transparent bg-blue-950 rounded-md shadow-sm text-sm font-medium text-white transition-transform transform hover:shadow-[0_0_60px_-10px_rgba(0,120,255,0.5)]
+        hover:border-blue-500/30 z-10"
               >
                 Enviar
               </button>

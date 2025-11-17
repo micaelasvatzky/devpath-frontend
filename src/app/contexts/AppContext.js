@@ -21,9 +21,9 @@ export const AppContextProvider = ({ children }) => {
   const [steps, setSteps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState([]);
-  const [completed, useCompleted] = useState([]);
   const [selectedPath, setSelectedPath] = useState(null);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
+  const [favoriteResources, setFavoriteResources] = useState([]);
 
   const getPaths = useCallback(async () => {
     try {
@@ -83,6 +83,68 @@ export const AppContextProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    console.log('favorites',favorites);
+  }, [favorites]);
+
+  const handleAddToFavorite = (id) => {
+    const added = favorites.find((resource) => resource.id === id);
+    if (!added) {
+      setFavorites([...favorites, { id }]);
+    }
+  };
+
+  const handleRemoveFavorite = (id) => {
+    setFavorites(favorites.filter((resource) => resource.id !== id));
+  };
+
+  const handleChangeFavorite = (id) => {
+    const exists = favorites.find((resource) => resource.id === id);
+    if (exists) {
+      handleRemoveFavorite(id);
+    } else {
+      handleAddToFavorite(id);
+    }
+  };
+
+  const isFavorite = (id) => {
+    return favorites.some((resource) => resource.id === id);
+  };
+
+  const favoritesQty = () => {
+    return favorites.length;
+  };
+
+  const getFavoriteResources = useCallback(async (favoritesIds) => {
+    try {
+      setLoading(true); // Inicia el estado de carga
+
+      // Hacemos la petición para cada id de favorito
+      const resourcesFavorites = await Promise.all(
+        favoritesIds.map(async (id) => {
+          try {
+            const res = await axios.get(
+              `${process.env.NEXT_PUBLIC_API_URL}/resources/${id}`
+            );
+            return res.data.resource; // Retorna el recurso que obtenemos de la API
+          } catch (error) {
+            console.error(`Error al obtener el recurso con id ${id}:`, error);
+            return null; // Si ocurre un error, retorna null
+          }
+        })
+      );
+
+      // Filtramos los resultados para eliminar los `null` (recursos no válidos)
+      setFavoriteResources(resourcesFavorites.filter(resource => resource !== null));
+      setLoading(false); // Fin de la carga
+    } catch (error) {
+      console.error("Error al obtener los recursos favoritos:", error);
+      setLoading(false); // Finaliza la carga en caso de error
+    }
+  }, []);
+
+
+
   return (
     <AppContext.Provider
       value={{
@@ -96,6 +158,13 @@ export const AppContextProvider = ({ children }) => {
         updateSelectedPath,
         addUser,
         user,
+        isFavorite,
+        handleChangeFavorite,
+        favoritesQty,
+        favorites,
+        getFavoriteResources,
+        favoriteResources,
+        loading
       }}
     >
       {children}
