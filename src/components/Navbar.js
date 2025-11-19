@@ -16,9 +16,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex justify-between items-center bg-transparent px-6 py-4 w-full fixed top-0 left-0 z-50">
+      <nav className="flex justify-between items-center bg-transparent px-6 py-4 w-full fixed top-0 left-0 z-50 lg:h-[100px]">
         <Link href="/" className="flex items-center">
-          <Image src="/assets/devpathlogo.png" width={200} height={1200} alt="logo" />
+          <Image src="/iconDev.png" width={200} height={1200} alt="logo" />
         </Link>
 
         <ul className="hidden md:flex md:flex-row w-auto justify-between bg-black text-white rounded-lg px-4 py-2 lg:mr-20">
