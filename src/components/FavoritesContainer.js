@@ -1,15 +1,17 @@
-'use client'
+"use client";
 import { useEffect } from "react";
 import { useAppContext } from "@/app/contexts/AppContext";
-import ResourceFavoriteCard from "@/components/ResourceFavoriteCard"; 
-
+import ResourceFavoriteCard from "@/components/ResourceFavoriteCard";
 
 const FavoritesContainer = () => {
-  const { favorites, getFavoriteResources, favoriteResources } = useAppContext(); 
+  const { favorites, getFavoriteResources, favoriteResources } =
+    useAppContext();
 
   useEffect(() => {
     if (favorites.length > 0) {
-      getFavoriteResources(favorites.map(fav => fav.id));  
+      getFavoriteResources(favorites.map((fav) => fav.id));
+    } else {
+      getFavoriteResources([]);
     }
   }, [favorites, getFavoriteResources]);
 
@@ -23,9 +25,7 @@ const FavoritesContainer = () => {
           radial-gradient(circle at 85% 25%, rgba(0, 150, 255, 0.4), transparent 50%)`,
       }}
     >
-       <h1
-        className="font-black text-center text-4xl sm:text-5xl md:text-6xl bg-linear-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent leading-tight mb-5"
-      >
+      <h1 className="font-black text-center text-4xl sm:text-5xl md:text-6xl bg-linear-to-r from-[#00aaff] via-[#a0c8ff] to-white bg-clip-text text-transparent leading-tight mb-5">
         Favorites
       </h1>
       <section className="m-5  bg-white/20 rounded-xl shadow-lg backdrop-blur md:pr-2.5 p-6">
@@ -46,5 +46,3 @@ const FavoritesContainer = () => {
 };
 
 export default FavoritesContainer;
-
-
