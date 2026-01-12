@@ -27,9 +27,9 @@ const Navbar = () => {
               {selectedPath ? selectedPath.name : "Select Path"}
             </Link>
           </li>
-          <li className="px-4 py-2">
+          {/*<li className="px-4 py-2">
             <Link href="/about-me">About Me</Link>
-          </li>
+          </li>*/}
           <li className="px-4 py-2 flex gap-2">
             <Link href="/favorites">Favorites</Link>
             <span className="bg-blue-800 text-white text-sm px-2 py-0.5 font-black rounded-full">
